@@ -158,7 +158,12 @@ const particleContainer =
   document.querySelector(".welcome-particles");
 
 
-const bgMusic = document.getElementById("bgMusic");
+const bgMusic =
+  document.getElementById("bgMusic");
+
+const musicToggle =
+  document.getElementById("musicToggle");
+
 
 enterBtn.addEventListener(
   "click",
@@ -166,13 +171,20 @@ enterBtn.addEventListener(
 
     bgMusic.play();
 
+    musicToggle.style.display =
+      "block";
+
+    musicToggle.textContent =
+      "🔊 Music On";
+
     welcomeScreen.classList.add(
       "hide-welcome"
     );
 
     setTimeout(
       function () {
-        welcomeScreen.style.display = "none";
+        welcomeScreen.style.display =
+          "none";
       },
       1000
     );
@@ -180,6 +192,29 @@ enterBtn.addEventListener(
   }
 );
 
+
+musicToggle.addEventListener(
+  "click",
+  function () {
+
+    if (bgMusic.paused) {
+
+      bgMusic.play();
+
+      musicToggle.textContent =
+        "🔊 Music On";
+
+    } else {
+
+      bgMusic.pause();
+
+      musicToggle.textContent =
+        "🔇 Music Off";
+
+    }
+
+  }
+);
 
 // floating celebration particles
 
