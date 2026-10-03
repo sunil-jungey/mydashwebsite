@@ -158,9 +158,13 @@ const particleContainer =
   document.querySelector(".welcome-particles");
 
 
+const bgMusic = document.getElementById("bgMusic");
+
 enterBtn.addEventListener(
   "click",
   function () {
+
+    bgMusic.play();
 
     welcomeScreen.classList.add(
       "hide-welcome"
